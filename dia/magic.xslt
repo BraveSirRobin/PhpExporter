@@ -1,12 +1,22 @@
 <?xml version="1.0"?>
-<!--
-@author Robin Harvey
-@date Dec 2007
-@copyright (c) Robin Harvey
-This one converts the XML which is spat out by code_parser in to dia XML format.
-Simply gzip the results of the transform, rename the file to blah.dia and off
-you go!
+<!-- 
+ Copyright (C) 2007 - 2011  Robin Harvey (harvey.robin@gmail.com)
 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!--
 TODO: Relationships
 TODO: Class Consts?
 -->

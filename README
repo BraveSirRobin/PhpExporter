@@ -1,0 +1,79 @@
+Php Exporter.
+-------------
+
+Robin Harvey (harvey.robin@gmail.com) - January 2011
+
+
+
+(1) Introduction.
+-----------------
+
+Php  exporter a  generic  PHP source  code  parsing and  documentation
+generation system.  It's different  to other similar systems (that I'm
+aware of) in that it uses  an intermediary XML output format, and XSLT
+sytlesheets  to convert  the intermediate  format in  to documentation
+files.  Currently, there are converters for Dia xml and HTML output, I
+personally don't use  the HTML one at  all, so this may need  a bit of
+attention.
+
+
+(2) Export Process.
+-------------------
+
+The exporter is invoked on  the command line using the code_parser.php
+script.  I  usually symlink to this  file from somewhere  on my system
+$PATH, from this point usage is simple:
+
+$> cd /dir/containing/php/code
+$> code_parser.php .
+
+All  being  well,   you'll  end  up  with  a   file  in  'pwd'  called
+ParsedCode.xml  - this  is  the intermediate  file,  and will  contain
+intermediate XML for all PHP files from `pwd` down.  Have a look at it
+and you'll recognise a large amount  of your own code!.  Now, you have
+to convert  this to the  output format of  yourt choice, this  is done
+with one of  the magic.xslt converters.  As mentioned,  there are 2 of
+these,  they're  in  the   dia/  and  html/  subdirectoiries  of  this
+distribution, currently you  have to copy the intermediate  file in to
+one of these directories and  run the xslt script against it manually,
+for example for the dia outputter you'd do something like this:
+
+$> cp ParsedCode.xml /path/to/PhpExporter/dia/
+$> xsltproc magix.xslt ParsedCode.xml > UmlDiagram.dia
+$> dia UmlDiagram.dia
+
+
+(3) TODO.
+---------
+
+(3.1) Write tests to prove the intermediate files are "correct".
+
+(3.2)  Sort of  minor  formatting issues  with  Dia output,  implement
+support for class constants.
+
+(3.3) Implement new PHP 5.3 features - stand-alone const declarations,
+namespaces, etc.
+
+(3.4)  Complete and  re-test the  HTML formatter,  consider  adding an
+option to build  in pretty-printed PHP source files  and link to these
+from the generated indexes.
+
+(3.5) Consider adding an "auto-format" option for the Dia outputter so
+that diagrams  are automatically  arranged.  Currently, Dia  files are
+output with  all classes sat  on top of  each other and the  user must
+manually rearrange  these.  This can be  a bit of a  problem if you've
+got a lot of classes.
+
+(3.6)  Create a new  XSLT formatter  to output  files in  the Graphvis
+format.
+
+(3.7) Add  options to the code_parser  script so that you  can give it
+one  or more  output  target  rather than  having  the 2-stage  output
+procedure, as outlined above.
+
+(3.8) Document the intermediate  format and output targets.  IIRC, you
+can tell the code parser component to output intermediate files at the
+class, file or global levels, this isn't really used at the moment.
+
+(3.9) Write  unit tests using  PHPUnit, drop the  existing self-rolled
+test class.
