@@ -1,0 +1,21 @@
+CONCAT:
+    <a href="#(obj-id)">Link to Fooby</a>
+    <a name="(obj-id)">This is fooby</a>
+
+CLASS:
+    <a href="(class-id).html#(obj-id)">Link to fooby</a> 
+    ~OR~ 
+    <a href="(class-id).html">Link to a class</a>
+    <a name="(obj-id)">This is fooby</a>
+
+FILE:
+    <a href="(file-id).html#(obj-id)">Link to Fooby</a>
+    ~OR~
+    <a href="(file-id).html">Link to a file</a>
+    <a name="(obj-id)">This is fooby</a>
+
+RULES:
+    1) Anchors are always of the form <a name="(obj-id)">This is fooby</a>
+
+    2) Links are of the form <a href="{(obj-id).html}{#(obj-id.html)}">Link to foo</a>
+    ... either or both must be present.

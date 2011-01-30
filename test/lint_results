@@ -1,0 +1,7 @@
+#! /bin/sh
+echo Begin Test results validation
+for f in `find out/ -name *.xml`
+do
+    xmllint --noout $f;
+done;
+echo Validation complete

@@ -1,0 +1,161 @@
+/**
+ * The Code Parser XHTML generator uses the following class identifiers:
+ *
+ * div.index - Containing div for the index section.
+ * div.detail - Containing div for the detail section.
+ * div.summary - Containing div for the summary section.
+ *
+ * div.class-summary - Containing div for the class section of the summary.
+ * div.interface-summary - Containing div for the interface section of the summary.
+ * div.function-summary - Containing div for the function section of the summary.
+ * div.gvar-summary - Containing div for the global variable section of the summary.
+ *
+ * div.file-detail - Containing div for detail on a file
+ * div.class-detail - Containing div for detail on a class
+ * div.interface-detail - Containing div for detail on an interface
+ * div.function-detail - Containing div for detail on a function
+ * div.method-detail - Containing div for detail on a method
+ * div.field-detail - Containing div for detail on a class field
+ * div.const-detail - Containing div for detail on a class constant
+ * div.gvar-detail - Containing div for detail on a global variable
+ * div.comment-detail - Containing div for detail on a documentation comment
+ * 
+ * div.object-summary - Containing div for markup which describes an object.  This is placed most of the div.XXX-detail divs 
+ * table.param-table - a table containing details on function/method parameters.  Only ever present with div.function-detail, div.method-detail
+ *
+ * ul.ifc-heir - Containing ul for a interface inheritance heirachy.  This is present in div.class-detail, div.interface-detail
+ * ul.class-heir Containing ul for a class inheritance heirachy. Only ever present in div.class-detail
+ *
+ * li.file-index - An index item which points to a file
+ * li.class-index - An index item which points to a class
+ * li.interface-index - An index item which points to an interface
+ * li.field-index - An index item which points to a field
+ * li.method-index - An index item which points to a method
+ * li.function-index - An index item which points to a function
+ * li.gvar-index - An index item which points to a global variable
+ * li.const-index - An index item which points to a class constant
+ *
+ * span.public - Wrapped around index items which are public
+ * span.private - Wrapped around index items which are private
+ * span.protected - Wrapped around index items which are protected
+ * span.static - Wrapped around index items which are static
+ *
+ */
+/**
+ * List styles for the heirachical page index
+ */
+li.file-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-file.png);
+}
+li.class-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-class.png);
+}
+li.field-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-field.png);
+}
+li.method-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-method.png);
+}
+li.gvar-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-gvar.png);
+}
+li.function-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-func.png);
+}
+li.interface-index {
+    list-style: list-style-image;
+    list-style-image: url(icon-interface.png);
+}
+/**
+ * Span styles for page index text.  Can have more than one
+ * style present at one, e.g. static & private, static & protected
+ */
+span.private {
+    background-image: url(icon-private.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding: 1px 1px 1px 19px;
+}
+span.static {
+    background-image: url(icon-static.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding: 1px 1px 1px 25px;
+}
+span.protected {
+    background-image: url(icon-protected.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding: 1px 1px 1px 42px;
+}
+/**
+ * Container div styles for object detail containers
+ */
+/*
+ * div.index - Containing div for the index section.
+ * div.detail - Containing div for the detail section.
+ *
+ * div.file-detail - Containing div for detail on a file
+ * div.class-detail - Containing div for detail on a class
+ * div.interface-detail - Containing div for detail on an interface
+ * div.function-detail - Containing div for detail on a function
+ * div.method-detail - Containing div for detail on a method
+ * div.field-detail - Containing div for detail on a class field
+ * div.const-detail - Containing div for detail on a class constant
+ * div.gvar-detail - Containing div for detail on a global variable
+ * div.comment-detail - Containing div for detail on a documentation comment
+ */
+div.file-detail {
+    background: #4066af;
+    margin: 0.5em 1em 0.5em 1em;
+}
+div.class-detail {
+    background: #a4cafb;
+    margin: 0.5em 1em 0.5em 1em;
+}
+div.interface-detail {
+    background: #a4cafb;
+    margin: 0.5em 1em 0.5em 1em;
+}
+div.method-detail {
+    background: #2d4698;
+    margin: 0.5em 1em 0.5em 1em;
+}
+div.field-detail {
+    background: #2d4698;
+    margin: 0.5em 1em 0.5em 1em;
+}
+div.comment-detail {
+    background: #e4e4c8;
+    margin: 0.5em 1em 0.5em 1em;
+}
+table, td, th {
+    border-color: #7c7048;
+    border-style: solid;
+}
+table {
+    border-width: 0 0 1px 1px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+td {
+    margin: 0;
+    padding: 4px;
+    border-width: 1px 1px 0 0;
+    background-color: #e5e4c8;
+}
+th {
+    margin: 0;
+    padding: 4px;
+    border-width: 1px 1px 0 0;
+    background-color: #e4dbb4;
+}
+
